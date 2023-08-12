@@ -7,6 +7,6 @@ ___
 This is a simple script to convert romaji text to hiragana text. I use a handmade csv table of hiragana and romaji from my other project [ZenMemoDecks](https://github.com/quantum-corn/ZenMemoDecks). I process the data using pandas and match the romaji extracted from input text to the corresponding hiragana and create a new string. I created this so that I can simplify typing hiragana in the other project I mentioned above.
 
 TODO:
-[] Add punctuation
-[] Add katakana support
-[] Add reverse support
+- [ ] Add punctuation
+- [ ] Add katakana support
+- [ ] Add reverse support
