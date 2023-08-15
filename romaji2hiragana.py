@@ -39,12 +39,15 @@ def convert(fi):
 # %% dataframe creation
 df=pd.read_csv("hiragana.csv")
 # %% read the input file
-path=input("enter the location of the file to transliterate\n")
+path=input("Enter the location of the file to transliterate\n")
 f=open(r"{}".format(path), 'r')
+print("Reading your file...")
 parse=f.read()
 f.close()
+print("Done.")
 # %% extract target text
-lim=input("enter the delimiter wrapping the romaji\n")
+lim=input("Enter the delimiter wrapping the romaji\n")
+print("Extracting romaji texts...")
 fi=[]
 j=0
 while(j<len(parse)):
@@ -61,15 +64,20 @@ while(j<len(parse)):
             break
         j=pos2+1
         fi.append(parse[pos+1:pos2])
+print("Done.")
 if len(fi)!=0:
+    print("Converting romaji to hiragana...")
     fo=convert(fi)
     # produce output
+    print("Creating the output text...")
     for i in range(len(fi)):
         parse=parse.replace(fi[i], fo[i])
         parse=parse.replace(lim,'')
         parse=parse.replace(lim,'')
     # write output to a file
-    path=input("enter output file path, where the file, if not already existing, will be created\n")
+    path=input("Enter output file path, where the file, if not already existing, will be created\n")
     f=open(r"{}".format(path), 'w')
+    print("Writing to your output file.")
     f.write(parse)
     f.close()
+    print("Done.")
